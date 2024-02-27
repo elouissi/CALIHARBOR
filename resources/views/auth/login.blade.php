@@ -17,7 +17,7 @@
     box-sizing: border-box;
 }
 body{
-     background-image: url('/images/plank1hand.jpg');
+     background-image: url('/images/calesthenics.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;

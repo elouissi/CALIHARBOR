@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 
 use App\Http\Controllers\Controller;
+use App\Repositories\UserRepositoryInterface;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Hash;
@@ -13,8 +14,15 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
- public function index(){
+   protected $userRepositoryInterface;
 
+
+   public function __construct(UserRepositoryInterface $userRepositoryInterface){
+       $this->userRepositoryInterface = $userRepositoryInterface;
+   }
+  
+ public function index(){
+   
     return view('auth.register');
  } 
 
@@ -29,7 +37,13 @@ class AuthController extends Controller
     if(Auth::attempt($form))
     {
         $request->session()->regenerate();
+          $vr=auth()->user()->hasRole;
+   if($vr[0]->name === 'admin'){
+
+      return redirect('/dashboard');
+   }else{
         return redirect('/');
+   }
       }
     return back()->onlyInput('email');
 
@@ -39,18 +53,21 @@ class AuthController extends Controller
  {
      $form = $request->validated();
     $form['password'] =hash::make($form['password']);
-   $user = User::create($form);
-    auth()->login($user);
+    $form['role_id'] = 2; // Définissez le rôle par défaut ici
+ 
+    $user = $this->userRepositoryInterface->create($form); 
+ 
+     auth()->login($user);
     return redirect('/');
  
  }
- public function logout(Request $request )
- {
 
-    auth()->logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('/');
-
+ public function logout(){
+   // $vr=auth()->user()->hasRole;
+   // dd($vr[0]->name);
+ 
+   Auth::logout();
+   return redirect('/');
  }
+ 
 }

@@ -120,6 +120,7 @@
     transition: 0.5s;
   }
   
+  
   #navbar li a:after {
     background: rgb(13, 26, 38);
     right: 0;

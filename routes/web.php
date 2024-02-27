@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ForgetPasswordManager;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController ;
+use App\Http\Controllers\HomeController ;
+use App\Http\Controllers\Auth\ForgetPasswordManager;
 
 
 /*
@@ -26,6 +27,8 @@ Route::post('/register', [AuthController::class, 'register'])->name('register')-
 Route::post('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/logout',[AuthController::class,'logout'])->middleware('auth');
 
+
+Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
 
 
 
