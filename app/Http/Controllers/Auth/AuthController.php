@@ -31,23 +31,22 @@ class AuthController extends Controller
     return view('auth.login');
  }
 
- public function login(LoginRequest $request)
- {
+ 
+  public function login(LoginRequest $request)
+{
     $form = $request->validated();
     if(Auth::attempt($form))
     {
         $request->session()->regenerate();
-          $vr=auth()->user()->hasRole;
-   if($vr[0]->name === 'admin'){
-
-      return redirect('/dashboard');
-   }else{
-        return redirect('/');
-   }
-      }
+        if(auth()->user()->hasRole('admin')){
+            return redirect('/dashboard');
+        }else{
+            return redirect('/');
+        }
+    }
     return back()->onlyInput('email');
+}
 
-  } 
 
  public function register(RegisterRequest $request)
  {
