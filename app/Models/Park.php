@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Park extends Model
 {
     use HasFactory;
+
+
+    public function ville()
+    {
+        return $this->belongsTo(Ville::class);
+    }
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
+    }
 }

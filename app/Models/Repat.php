@@ -13,4 +13,8 @@ class Repat extends Model
 
         return $this->belongsToMany(Seance::class, 'seance_repat');
     }
+    public function Ingrediants(){
+
+        return $this->belongsToMany(Ingrediant::class, 'repat_ingrediants');
+    }
 }

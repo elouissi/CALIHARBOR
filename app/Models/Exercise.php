@@ -19,6 +19,6 @@ class Exercise extends Model
     }
     public function Exercises_Details(){
 
-        return $this->belongsToMany(Exercises_Details::class, 'exercise_skills');
+        return $this->belongsToMany(Exercises_Details::class, '_exercise__exercises__details');
     }
 }
