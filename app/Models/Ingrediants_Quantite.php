@@ -10,6 +10,11 @@ class Ingrediants_Quantite extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+       
+        'quantite'
+    ];
+
     public function Ingrediants(){
 
         return $this->belongsToMany(Ingrediant::class, 'ingrediants_ingrediants_quantite');

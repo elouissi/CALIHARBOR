@@ -52,9 +52,9 @@ class User extends Authenticatable
         return $this->role_id == $role;
     }
 
-    public function Enrolls()
+    public function Programmes()
     {
-        return $this->belongsToMany(Programme::class, 'enrolls');
+        return $this->belongsTo(Programme::class);
     }
 
 

@@ -9,6 +9,13 @@ class Seance extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'nom',
+        'durée',
+        'objectif',
+        'description' 
+    ];
+
 
     public function Programmes(){
 
@@ -20,6 +27,6 @@ class Seance extends Model
     }
     public function Repats(){
 
-        return $this->belongsToMany(Repat::class, 'seance_repat');
+        return $this->belongsTo(Repat::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController ;
 use App\Http\Controllers\HomeController ;
 use App\Http\Controllers\Auth\ForgetPasswordManager;
-
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +36,8 @@ Route::get('/forgetPassword',[ForgetPasswordManager::class,'forgetPassword'])->n
 Route::post('/forgetPassword',[ForgetPasswordManager::class,'forgetPasswordPost'])->name('forgetPasswordPost')->middleware('guest');
 Route::get('/resetPassword/{token}',[ForgetPasswordManager::class,'resetPassword'])->name('resetPassword')->middleware('guest');
 Route::post('/resetPassword',[ForgetPasswordManager::class,'resetPasswordPost'])->name('resetPasswordPost');
+
+
+Route::get('/users', [UserController::class, 'index'])->name('users');
+
+

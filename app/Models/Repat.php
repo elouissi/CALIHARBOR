@@ -9,9 +9,16 @@ class Repat extends Model
 {
     use HasFactory;
 
+
+    protected $fillable=[
+        'nom',
+        'description'
+       
+    ];
+
     public function Seances(){
 
-        return $this->belongsToMany(Seance::class, 'seance_repat');
+        return $this->hasMany(Seance::class);
     }
     public function Ingrediants(){
 

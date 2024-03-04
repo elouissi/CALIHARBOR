@@ -9,6 +9,12 @@ class Park extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        'nom',
+        'adresse'
+
+    ];
+
 
     public function ville()
     {

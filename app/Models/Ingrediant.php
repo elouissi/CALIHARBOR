@@ -9,6 +9,11 @@ class Ingrediant extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        'nom',
+         'description'
+    ];
+
 
     public function Repats(){
 

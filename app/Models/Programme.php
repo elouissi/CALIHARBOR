@@ -10,12 +10,16 @@ class Programme extends Model
     use HasFactory;
     
     protected $fillable=[
-
+        'titre',
+        'duree',
+        'prix',
+        'description',
+        'niveau' 
     ];
 
-    public function Enrolls()
+    public function Users()
     {
-        return $this->belongsToMany(User::class, 'enrolls');
+        return $this->hasMany(User::class);
     }
 
     public function Seances(){
