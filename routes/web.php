@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController ;
 use App\Http\Controllers\HomeController ;
 use App\Http\Controllers\Auth\ForgetPasswordManager;
+use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\ExercisesDetailsController;
 use App\Http\Controllers\UserController;
 
@@ -42,6 +43,10 @@ Route::post('/resetPassword',[ForgetPasswordManager::class,'resetPasswordPost'])
 //exercise details users 
 
 Route::resource('exercises_details', ExercisesDetailsController::class);
+
+//exercise users 
+
+Route::resource('exercises', ExerciseController::class);
 
 
 

@@ -21,6 +21,7 @@ class ExerciseController extends Controller
     public function index()
     {
         $exercises = $this->ExerciseRepositoryInterface->getAll();
+ 
         return view('Dashboard.exercises.index',compact('exercises'));
         //
     }
@@ -30,7 +31,7 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard.exercises.create');
     }
 
     /**
@@ -38,8 +39,17 @@ class ExerciseController extends Controller
      */
     public function store(StoreExerciseRequest $request)
     {
-        //
+        $form = $request->validated();
+    
+              $imagePath = $request->file('image')->store('exercises', 'public');
+             $form['image'] = $imagePath;
+        
+        $this->ExerciseRepositoryInterface->create($form);
+    
+        // Redirige vers la liste des exercices
+        return redirect()->route('exercises.index')->with('success', 'Exercice créé avec succès');
     }
+    
 
     /**
      * Display the specified resource.
@@ -52,24 +62,45 @@ class ExerciseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Exercise $exercise)
+    public function edit(int $id)
     {
-        //
+        $exercise = $this->ExerciseRepositoryInterface->getById($id);
+        return view('Dashboard.exercises.edit',compact('exercise'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateExerciseRequest $request, Exercise $exercise)
+    public function update(UpdateExerciseRequest $request, int $id)
     {
-        //
+        $exercise = $this->ExerciseRepositoryInterface->getById($id);
+
+
+       $form = $request->validated();
+
+       if ($request->hasFile('image')) {
+        $form['image'] = $request->file('image')->store('exercises', 'public');
+    } else {
+        $form['image'] = $exercise->image; // Conserver l'image actuelle si aucun nouveau fichier n'a été téléchargé
+    }
+
+    $this->ExerciseRepositoryInterface->update($id,$form);
+
+    return redirect()->route('exercises.index')->with('success', 'Exercice modifié avec succès');
+    
+
+
+    
+        
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Exercise $exercise)
+    public function destroy(int $id)
     {
-        //
+        $this->ExerciseRepositoryInterface->delete($id);
+        return redirect()->route('exercises.index')->with('success', 'Exercice suprimée avec succès');
+        
     }
 }

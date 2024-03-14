@@ -2,34 +2,34 @@
 
 namespace App\Repositories;
 
-use App\Models\Ingrediants_Quantite;
-
+use App\Models\Exercise;
+ 
 class    ExerciseRepository implements ExerciseRepositoryInterface 
 {
     public function getById($id)
     {
-        return Ingrediants_Quantite::findOrFail($id);
+        return Exercise::findOrFail($id);
     }
 
     public function create(array $data)
     {
-        return Ingrediants_Quantite::create($data);
+        return Exercise::create($data);
     }
     public function getAll()
     {
-        return Ingrediants_Quantite::all();
+        return Exercise::all();
     }
 
     public function update($id, array $data)
     {
-        $Ingrediants_Quantite = $this->getById($id);
-        $Ingrediants_Quantite->update($data);
-        return $Ingrediants_Quantite;
+        $Exercise = $this->getById($id);
+        $Exercise->update($data);
+        return $Exercise;
     }
 
     public function delete($id)
     {
-        $Ingrediants_Quantite = $this->getById($id);
-        $Ingrediants_Quantite->delete();
+        $Exercise = $this->getById($id);
+        $Exercise->delete();
     }
 }

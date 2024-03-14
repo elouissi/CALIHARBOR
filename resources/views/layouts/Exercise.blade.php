@@ -59,8 +59,8 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Exercises</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('exercises.index')}}" class="dropdown-item">exercises</a>
-                            <a href="{{route('exercises_details.index')}}" class="dropdown-item active">détails d'exercise</a>
+                            <a href="{{route('users')}}" class="dropdown-item active">exercises</a>
+                            <a href="{{route('exercises_details.index')}}" class="dropdown-item ">détails d'exercise</a>
                          </div>
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
