@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Ingrediants_Quantite;
 
-class    Ingrediants_Quantite_DetailsRepository implements Ingrediant_QuantitesRepositoryInterface 
+class    Ingrediants_QuantitesRepository implements Ingrediant_QuantitesRepositoryInterface 
 {
     public function getById($id)
     {
