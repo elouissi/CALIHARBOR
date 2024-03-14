@@ -57,11 +57,10 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Exercises</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                            <a href="{{route('users')}}" class="dropdown-item">exercises</a>
+                            <a href="{{route('exercises_details.index')}}" class="dropdown-item">détails d'exercise</a>
                         </div>
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
@@ -230,6 +229,7 @@
                                 <a href="">Show All</a>
                             </div>
                             <canvas id="worldwide-sales"></canvas>
+                            
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
@@ -239,6 +239,7 @@
                                 <a href="">Show All</a>
                             </div>
                             <canvas id="salse-revenue"></canvas>
+                            
                         </div>
                     </div>
                 </div>
@@ -469,6 +470,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <link href="{{asset('lib/chart/chart.min.js')}}" rel="stylesheet" />
     <link href="{{asset('lib/easing/easing.min.js')}}" rel="stylesheet" />
     <link href="{{asset('lib/waypoints/waypoints.min.js')}}" rel="stylesheet" />

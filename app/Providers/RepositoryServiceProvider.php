@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Exercise_DetailsRepository;
+use App\Repositories\Exercise_DetailsRepositoryInterface;
 use App\Repositories\SeanceRepository;
 use App\Repositories\SeanceRepositoryInterface;
 use App\Repositories\SkillRepository;
@@ -24,7 +26,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(VilleRepositoryInterface::class , VilleRepository::class);
         $this->app->bind(SkillRepositoryInterface::class , SkillRepository::class);
         $this->app->bind(SeanceRepositoryInterface::class , SeanceRepository::class);
-        $this->app->bind(UserRepositoryInterface::class , UserRepository::class);
+        $this->app->bind(Exercise_DetailsRepositoryInterface::class , Exercise_DetailsRepository::class);
         $this->app->bind(UserRepositoryInterface::class , UserRepository::class);
         $this->app->bind(UserRepositoryInterface::class , UserRepository::class);
     }

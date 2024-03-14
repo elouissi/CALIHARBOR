@@ -5,14 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExerciseRequest;
 use App\Http\Requests\UpdateExerciseRequest;
 use App\Models\Exercise;
+use App\Repositories\ExerciseRepositoryInterface;
 
 class ExerciseController extends Controller
 {
+    protected $ExerciseRepositoryInterface;
+
+
+    public function __construct(ExerciseRepositoryInterface $ExerciseRepositoryInterface){
+        $this->ExerciseRepositoryInterface = $ExerciseRepositoryInterface;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $exercises = $this->ExerciseRepositoryInterface->getAll();
+        return view('Dashboard.exercises.index',compact('exercises'));
         //
     }
 

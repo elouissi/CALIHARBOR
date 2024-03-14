@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController ;
 use App\Http\Controllers\HomeController ;
 use App\Http\Controllers\Auth\ForgetPasswordManager;
+use App\Http\Controllers\ExercisesDetailsController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -30,12 +31,18 @@ Route::get('/logout',[AuthController::class,'logout'])->middleware('auth');
 
 Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
 
-
+//forget password
 
 Route::get('/forgetPassword',[ForgetPasswordManager::class,'forgetPassword'])->name('forgetPassword')->middleware('guest');
 Route::post('/forgetPassword',[ForgetPasswordManager::class,'forgetPasswordPost'])->name('forgetPasswordPost')->middleware('guest');
 Route::get('/resetPassword/{token}',[ForgetPasswordManager::class,'resetPassword'])->name('resetPassword')->middleware('guest');
 Route::post('/resetPassword',[ForgetPasswordManager::class,'resetPasswordPost'])->name('resetPasswordPost');
+
+
+//exercise details users 
+
+Route::resource('exercises_details', ExercisesDetailsController::class);
+
 
 
 Route::get('/users', [UserController::class, 'index'])->name('users');

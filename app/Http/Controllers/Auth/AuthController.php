@@ -64,7 +64,6 @@ class AuthController extends Controller
  public function logout(){
    // $vr=auth()->user()->hasRole;
    // dd($vr[0]->name);
- 
    Auth::logout();
    return redirect('/');
  }
