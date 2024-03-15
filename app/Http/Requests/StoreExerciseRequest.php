@@ -22,7 +22,7 @@ class StoreExerciseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image'=>'required|image|mimes:png,jpg,svg',
+            'image'=>'required|image|mimes:png,jpg,svg,jpeg,webp',
             'nom' => 'required',
             'description'=>'required'
         ];

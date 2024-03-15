@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController ;
 use App\Http\Controllers\Auth\ForgetPasswordManager;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\ExercisesDetailsController;
+use App\Http\Controllers\IngrediantController;
 use App\Http\Controllers\IngrediantsQuantiteController;
 use App\Http\Controllers\UserController;
 
@@ -53,6 +54,10 @@ Route::resource('exercises', ExerciseController::class);
 //detals ingrediant users 
 
 Route::resource('ingrediant_quantite', IngrediantsQuantiteController::class);
+
+//ingrediant users 
+
+Route::resource('ingrediant', IngrediantController::class);
 
 
 

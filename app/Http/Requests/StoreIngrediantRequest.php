@@ -11,7 +11,7 @@ class StoreIngrediantRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreIngrediantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'image'=>'required|image|mimes:png,jpg,svg,jpeg,webp',
+            'nom' => 'required',
+            'description' => 'required'
+
         ];
     }
 }

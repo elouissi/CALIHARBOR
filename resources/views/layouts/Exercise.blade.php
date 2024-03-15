@@ -66,8 +66,8 @@
                     <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-utensils me-2"></i>Ingrediants</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('ingrediant_quantite.index')}}" class="dropdown-item  ">Ingrediants</a>
-                            <a href="{{route('exercises_details.index')}}" class="dropdown-item ">Ingrediants quantité</a>
+                            <a href="{{route('ingrediant.index')}}" class="dropdown-item  ">Ingrediants</a>
+                            <a href="{{route('ingrediant_quantite.index')}}" class="dropdown-item ">Ingrediants quantité</a>
                          </div>
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>

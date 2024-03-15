@@ -7,6 +7,8 @@ use App\Repositories\Exercise_DetailsRepositoryInterface;
 use App\Repositories\ExerciseRepository;
 use App\Repositories\ExerciseRepositoryInterface;
 use App\Repositories\Ingrediant_QuantitesRepositoryInterface;
+use App\Repositories\IngrediantRepository;
+use App\Repositories\IngrediantRepositoryInterface;
 use App\Repositories\Ingrediants_Quantite_DetailsRepository;
 use App\Repositories\Ingrediants_QuantitesRepository;
 use App\Repositories\SeanceRepository;
@@ -34,6 +36,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(Exercise_DetailsRepositoryInterface::class , Exercise_DetailsRepository::class);
         $this->app->bind(ExerciseRepositoryInterface::class , ExerciseRepository::class);
         $this->app->bind(Ingrediant_QuantitesRepositoryInterface::class , Ingrediants_QuantitesRepository::class);
+        $this->app->bind(IngrediantRepositoryInterface::class , IngrediantRepository::class);
     }
 
     /**

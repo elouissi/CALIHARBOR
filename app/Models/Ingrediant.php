@@ -10,6 +10,7 @@ class Ingrediant extends Model
     use HasFactory;
 
     protected $fillable =[
+        'image',
         'nom',
          'description'
     ];
