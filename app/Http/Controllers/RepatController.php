@@ -76,17 +76,41 @@ class RepatController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Repat $repat)
+    public function edit(int $id)
     {
-        //
+        $repat = Repat::with('ingrediants')->find($id);
+        $ingrediants = $this->IngrediantRepositoryInterface->getAll();
+
+
+          return view('Dashboard.repat.edit',compact('repat','ingrediants'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRepatRequest $request, Repat $repat)
+    public function update(Request $request, int $id)
     {
-        //
+        $form = $request->validate([
+            'nom' => 'required',
+            'description' => 'required'
+        ]);
+    
+        $repat = $this->RepatRepositoryInterface->getById($id);
+    
+        $repat->update($form);
+    
+        $ingrediants = $request->input('ingrediants');
+        $quantites = $request->input('quantites');
+    
+        $ingrediantsWithQuantites = [];
+        for ($i = 0; $i < count($ingrediants); $i++) {
+            $ingrediantsWithQuantites[$ingrediants[$i]] = ['quantite' => $quantites[$i]];
+        }
+    
+        $repat->ingrediants()->sync($ingrediantsWithQuantites);
+    
+        return redirect()->route('repat.index');
     }
 
     /**

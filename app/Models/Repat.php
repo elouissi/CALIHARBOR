@@ -23,4 +23,7 @@ class Repat extends Model
     {
         return $this->belongsToMany(Ingrediant::class, 'repat_ingrediants')->withPivot('quantite');
     }
+
+
+
 }

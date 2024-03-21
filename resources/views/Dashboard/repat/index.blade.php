@@ -43,11 +43,10 @@
                                     <td>{{ $repat->nom }} </td>
                                     <td>{{ $repat->description }} </td>
                                     <td>
-    @foreach($repat->ingrediants as $ingrediant)
-        <li>{{ $ingrediant->nom }} - {{ $ingrediant->pivot->quantite }} {{ $ingrediant->unite }}</li>
-    @endforeach
-</td>
-                                  
+                                        @foreach($repat->ingrediants as $ingrediant)
+                                            <li> {{ $ingrediant->pivot->quantite }} -- {{ $ingrediant->unite }} -- {{ $ingrediant->nom }} </li>
+                                        @endforeach
+                                    </td>
                                     <td>
                                         <form action="{{ route('repat.destroy', $repat->id) }}" method="POST">
                                             @csrf
