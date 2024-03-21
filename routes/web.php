@@ -8,6 +8,7 @@ use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\ExercisesDetailsController;
 use App\Http\Controllers\IngrediantController;
 use App\Http\Controllers\IngrediantsQuantiteController;
+use App\Http\Controllers\RepatController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -58,6 +59,10 @@ Route::resource('ingrediant_quantite', IngrediantsQuantiteController::class);
 //ingrediant users 
 
 Route::resource('ingrediant', IngrediantController::class);
+
+//repats users 
+
+Route::resource('repat', RepatController::class);
 
 
 

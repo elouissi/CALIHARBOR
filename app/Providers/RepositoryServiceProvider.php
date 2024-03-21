@@ -11,6 +11,8 @@ use App\Repositories\IngrediantRepository;
 use App\Repositories\IngrediantRepositoryInterface;
 use App\Repositories\Ingrediants_Quantite_DetailsRepository;
 use App\Repositories\Ingrediants_QuantitesRepository;
+use App\Repositories\RepatRepository;
+use App\Repositories\RepatRepositoryInterface;
 use App\Repositories\SeanceRepository;
 use App\Repositories\SeanceRepositoryInterface;
 use App\Repositories\SkillRepository;
@@ -37,6 +39,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ExerciseRepositoryInterface::class , ExerciseRepository::class);
         $this->app->bind(Ingrediant_QuantitesRepositoryInterface::class , Ingrediants_QuantitesRepository::class);
         $this->app->bind(IngrediantRepositoryInterface::class , IngrediantRepository::class);
+        $this->app->bind(RepatRepositoryInterface::class , RepatRepository::class);
     }
 
     /**

@@ -71,7 +71,7 @@
                          </div>
                     </div>
                     </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="{{route('repat.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Repat</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="{{route('users')}}" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>users</a>

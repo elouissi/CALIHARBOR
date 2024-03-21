@@ -9,19 +9,18 @@ class Repat extends Model
 {
     use HasFactory;
 
-
-    protected $fillable=[
+    protected $fillable = [
         'nom',
         'description'
-       
     ];
 
-    public function Seances(){
-
+    public function seances()
+    {
         return $this->hasMany(Seance::class);
     }
-    public function Ingrediants(){
 
-        return $this->belongsToMany(Ingrediant::class, 'repat_ingrediants');
+    public function ingrediants()
+    {
+        return $this->belongsToMany(Ingrediant::class, 'repat_ingrediants')->withPivot('quantite');
     }
 }

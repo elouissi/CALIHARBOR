@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('repat_id');
             $table->unsignedBigInteger('ingrediant_id');
+            $table->integer('quantite');
 
+ 
             $table->foreign('ingrediant_id')
                   ->references('id')
                   ->on('ingrediants')

@@ -23,7 +23,8 @@ class UpdateIngrediantRequest extends FormRequest
     {
         return [
              'nom' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'unite' => 'required'
 
         ];
     }

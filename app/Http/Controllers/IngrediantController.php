@@ -38,6 +38,7 @@ class IngrediantController extends Controller
     public function store(StoreIngrediantRequest $request)
     {
         $form = $request->validated();
+ 
     
         $imagePath = $request->file('image')->store('ingrediants', 'public');
        $form['image'] = $imagePath;

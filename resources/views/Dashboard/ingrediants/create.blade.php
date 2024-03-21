@@ -31,6 +31,15 @@
                 placeholder="description"></textarea>
             <label for="floatingInput">dexcription</label>
         </div>
+        <div class="form-floating mb-3">
+                     <select class="form-select form-select-md mb-3" name="unite" aria-label=".form-select-lg example">
+                        <option  disabled selected>choisir une unité</option>
+                        <option value="g"  >g</option>
+                        <option value="unite" >unité</option>
+                        <option value="l"  >llitre</option>
+                   
+                    </select>
+        </div>
     
         <button type="submit"class="btn btn-sm btn-primary">add ingrediant</button>
 

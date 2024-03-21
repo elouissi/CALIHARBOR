@@ -64,13 +64,13 @@
                          </div>
                     </div>
                     <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="fas fa-utensils me-2"></i>Ingrediants</a>
+                    <a href="#" class="nav-link dropdown-toggle  " data-bs-toggle="dropdown"><i class="fas fa-utensils me-2"></i>Ingrediants</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('ingrediant.index')}}" class="dropdown-item  ">Ingrediants</a>
-                            <a href="{{route('ingrediant_quantite.index')}}" class="dropdown-item active ">Ingrediants quantité</a>
+                            <a href="{{route('ingrediant_quantite.index')}}" class="dropdown-item ">Ingrediants quantité</a>
                          </div>
                     </div>
-                    <a href="{{route('repat.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Repat</a>
+                    <a href="{{route('repat.index')}}" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Repat</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="{{route('users')}}" class="nav-item nav-link"><i class="fa fa-users me-2"></i>users</a>
@@ -194,6 +194,7 @@
     <link href="{{asset('lib/tempusdominus/js/moment.min.js')}}" rel="stylesheet" />
     <link href="{{asset('lib/tempusdominus/js/moment-timezone.min.js')}}" rel="stylesheet" />
     <link href="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}" rel="stylesheet" />
+   
 
 
     <!-- Template Javascript -->

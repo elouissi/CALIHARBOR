@@ -9,19 +9,20 @@ class Ingrediant extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
+    protected $fillable = [
         'image',
         'nom',
-         'description'
+        'description',
+        'unite'
     ];
 
-
-    public function Repats(){
-
-        return $this->belongsToMany(Repat::class, 'repat_ingrediants');
+    public function repats()
+    {
+        return $this->belongsToMany(Repat::class, 'repat_ingrediants')->withPivot('quantite');
     }
-    public function Ingrediants_Quantite(){
 
+    public function ingrediants_quantite()
+    {
         return $this->belongsToMany(Ingrediants_Quantite::class, 'ingrediants_ingrediants_quantite');
     }
 }

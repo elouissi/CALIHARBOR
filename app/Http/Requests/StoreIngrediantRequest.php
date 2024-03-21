@@ -24,7 +24,8 @@ class StoreIngrediantRequest extends FormRequest
         return [
             'image'=>'required|image|mimes:png,jpg,svg,jpeg,webp',
             'nom' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'unite' => 'required'
 
         ];
     }
